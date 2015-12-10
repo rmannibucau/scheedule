@@ -1,0 +1,10 @@
+{{#errors.length}}
+    <div class="bs-callout bs-callout-danger">
+        <h4 class="text-danger">Error</h4>
+        <ul>
+            {{#errors}}
+                <li>{{ . }}</li>
+            {{/errors}}
+        </ul>
+    </div>
+{{/errors.length}}

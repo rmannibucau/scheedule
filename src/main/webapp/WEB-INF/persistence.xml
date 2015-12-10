@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  Tomitribe Confidential
+  ~
+  ~  Copyright Tomitribe Corporation. 2015
+  ~
+  ~  The source code for this program is not published or otherwise divested
+  ~  of its trade secrets, irrespective of what has been deposited with the
+  ~  U.S. Copyright Office.
+  -->
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+  <persistence-unit name="cron">
+    <jta-data-source>jdbc/cron</jta-data-source>
+    <non-jta-data-source>jdbc/cronNonJta</non-jta-data-source>
+    <class>com.github.rmannibucau.scheedule.service.jpa.Cron</class>
+    <class>com.github.rmannibucau.scheedule.service.jpa.ExecutionEvent</class>
+    <class>com.github.rmannibucau.scheedule.service.jpa.Property</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+    </properties>
+  </persistence-unit>
+</persistence>

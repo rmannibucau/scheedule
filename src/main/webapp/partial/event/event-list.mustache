@@ -1,0 +1,20 @@
+{{#events.length}}
+    <ul id="events">
+        {{#events}}
+            <li>
+                {{ id }} - {{ task }} @ {{ date }} for {{ duration }}ms
+                {{#exceptionString}}
+                    <div class="bs-callout bs-callout-danger">
+                        <pre>
+                        {{ . }}
+                        </pre>
+                    </div>
+                {{/exceptionString}}
+            </li>
+        {{/events}}
+    </ul>
+    {{>paginator}}
+{{/events.length}}
+{{^events}}
+    No cron.
+{{/events}}

@@ -1,0 +1,14 @@
+{{#configurations.length}}
+    <ul id="configurations">
+        {{#configurations}}
+            <li style="display: {{ display }}">
+                <a href="#!configuration/{{ id }}">{{ key }}</a> = {{ value }}
+                <i class="glyphicon glyphicon-remove text-danger" can-click="{removeConfig .}"></i>
+            </li>
+        {{/configurations}}
+    </ul>
+    {{>paginator}}
+{{/configurations.length}}
+{{^configurations}}
+    No entry.
+{{/configurations}}

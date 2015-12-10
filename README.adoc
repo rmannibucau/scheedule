@@ -1,0 +1,53 @@
+= Environment
+
+Configuration relies on DeltaSpike configuration but it is highly recommanded to set the values in
+the dedicated table and not in system.properties for a real usage.
+
+= Configuration
+
+The application has a key-value configuration storage in a database integrated to deltaspike.
+
+= Schedule tasks
+
+Tasks can be CDI bean implementing `Runnable` like:
+
+[source,java]
+----
+@Named
+public class SampleTask implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Executed");
+    }
+}
+----
+
+When creating the scheduled task you can just reference it using its CDI name (`sampleTask`) or qualified class name if
+it uses `@Default` qualifier.
+
+= Cron syntax
+
+Cron syntax uses 5 or 6 items with some shortcuts for:
+
+- hourly
+- daily
+- weekly
+- monthly
+- annually
+- never
+
+otherwise you can use the syntaxes:
+
+[source]
+----
+minute hour second dayOfMonth month dayOfWeek
+----
+
+or
+
+[source]
+----
+minute hour dayOfMonth month dayOfWeek
+----
+
+The accepted values matches `ScheduleExpression` ones for the related fields.

@@ -1,0 +1,13 @@
+#main-container {
+    padding-top: 70px;
+}
+
+.bs-callout {
+    padding-left: 5px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.bs-callout-danger {
+    border-left-color: #ce4844;
+}

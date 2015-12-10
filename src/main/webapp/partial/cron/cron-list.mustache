@@ -1,0 +1,15 @@
+{{#crons.length}}
+    <ul id="crons">
+        {{#crons}}
+            <li style="display: {{ display }}">
+                <a href="#!cron/{{ id }}">{{ name }}</a> : {{ task }}
+                <i class="glyphicon glyphicon-remove text-danger" can-click="{removeCron .}"></i>
+                <i class="glyphicon glyphicon-repeat text-info" can-click="{forceCron .}"></i>
+            </li>
+        {{/crons}}
+    </ul>
+    {{>paginator}}
+{{/crons.length}}
+{{^crons}}
+    No cron.
+{{/crons}}

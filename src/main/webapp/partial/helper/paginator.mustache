@@ -1,0 +1,20 @@
+{{#if pagination.hasMultiplePages}}
+    <nav>
+        <ul class="pager">
+            {{#if pagination.hasPrevious}}
+                <li class="previous">
+                    <a href="#!{{ pagination.previousPage }}">
+                        <span aria-hidden="true">&larr;</span> Previous
+                    </a>
+                </li>
+            {{/if}}
+            {{#if pagination.hasNext}}
+                <li class="next">
+                    <a href="#!{{ pagination.nextPage }}">
+                        Next <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            {{/if}}
+        </ul>
+    </nav>
+{{/if}}
